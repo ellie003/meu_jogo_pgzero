@@ -23,7 +23,7 @@ def start_music():
     global music_on
     if not music_on:
         try:
-            music.play("background")
+            music.play("background") # a musica é Fallen Down - Duncan cox
             music.set_volume(0.5)
             music_on = True
         except Exception:
@@ -33,7 +33,7 @@ def stop_music():
     global music_on
     music.stop()
     music_on = False
-# Classe do jogador
+# classe do jogador encontrei aqui https://kenney.nl/assets/new-platformer-pack
 class Player:
     def __init__(self):
         # cria o personagem
@@ -99,7 +99,7 @@ class Player:
                 sounds.sfx_hurt.play()
             except Exception:
                 pass
-# classe dos inimigos
+# classe dos inimigos encontrei aqui https://kenney.nl/assets/new-platformer-pack
 class Worm:
     def __init__(self, x, y, speed):
         self.actor = Actor("worm_ring_rest", (x, y))
@@ -128,7 +128,8 @@ class Worm:
     def hitbox(self):
         return Rect((self.actor.x - 15, self.actor.y - 10), (30, 20))
 
-# Classe das peças da nave
+
+# classe das peças da nave encontrei aqui https://kenney.nl/assets/space-shooter-extension
 class ShipPart:
     def __init__(self, x, y):
         self.actor = Actor("ship_part", (x, y))
